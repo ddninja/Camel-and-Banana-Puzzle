@@ -14,9 +14,9 @@ I have just coded the solution in C++.
 
 On execting the code 
 
-it first asks no.of banana,then total distance,then capacity of the camel,then no of banana required to cover 1km
+It first asks no.of banana,then total distance,then capacity of the camel,then no of banana required to cover 1km
 
-then it will generate the no of banana required along with the no of stoppage in between.
+then it will generate the no of banana that can be transferred along with the no of stoppage in between.
 
 Hope You all like my code. Please do give Star to my repository if you like it.
 

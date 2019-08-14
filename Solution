@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	cout<<"No. of Banana = ";
+	int no_of_banana,capacity_of_camel,cost;
+	cin>>no_of_banana;
+	int distance_to_travel;
+	cout<<"Total Distance = ";
+	cin>>distance_to_travel;
+	cout<<"Capacity of a Camel = ";
+	cin>>capacity_of_camel;
+	cout<<"No of Banana required to travel 1km = ";
+	cin>>cost;
+    //minimum no of trips for first destination
+    int i=1,f=0;
+    double present_distance=0;
+    while(no_of_banana>capacity_of_camel)
+    {
+        double nooftrip=2*(no_of_banana/capacity_of_camel)-1;
+        double s=double(capacity_of_camel)/(double(nooftrip*cost));
+        present_distance+=s;              
+        no_of_banana-= capacity_of_camel;
+        if(present_distance>distance_to_travel)
+        {
+          f=1;
+          no_of_banana+=(present_distance-distance_to_travel)*nooftrip;
+          break;
+        }  
+        cout<<i<<" stoppage distance "<< present_distance<<" Banana Left = "<<no_of_banana<<endl;
+        i++;
+
+    }
+    double distance_left=distance_to_travel-present_distance;
+    if(cost*distance_left>no_of_banana)
+    {
+    	cout<<"No Banana can be carried to destination.\n";
+    }
+    else
+    {
+    	if(f==1)
+    		cout<<"No. of Banana that can be carried is  "<<no_of_banana<<endl;
+    	else cout<<"No. of Banana that can be carried is "<<no_of_banana-distance_left*cost<<endl;
+    }
+}
